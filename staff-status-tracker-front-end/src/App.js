@@ -1,34 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-// import {
-//   BrowserRouter as Router,
-//   Redirect,
-//   Route,
-//   Switch
-// } from 'react-router-dom';
 
 // FILE IMPORTS//
-// import Navbar from './Components/Navbar/Navbar.js';
+import Navbar from './Components/Navbar/Navbar.js';
+import StickyFooter from './Components/Footer/Footer.js';
+import Legend from './Components/Legend/Legend.js'
+import SectionSummaries from './Components/SectionSummaries/SectionSummaries';
 // import Dashboard from './Components/Dashboard/Dashboard.js';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <Navbar />
       </header>
+      <legend>
+        <Legend />
+      </legend>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <body>
+        <SectionSummaries />
+      </body>
+      <footer>
+        <StickyFooter />
+        </footer>
     </div>
   );
 }

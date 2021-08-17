@@ -1,8 +1,12 @@
 .App {
   text-align: center;
+  background-color: #1b242d;
 }
 
-.App-logo {
+.makeStyles {
+  background-color: #f5f5f5;
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
