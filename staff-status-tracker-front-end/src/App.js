@@ -1,5 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+// import {
+//   BrowserRouter as Router,
+//   Redirect,
+//   Route,
+//   Switch
+// } from 'react-router-dom';
+
+// FILE IMPORTS//
+// import Navbar from './Components/Navbar/Navbar.js';
+// import Dashboard from './Components/Dashboard/Dashboard.js';
+
 
 function App() {
   return (
