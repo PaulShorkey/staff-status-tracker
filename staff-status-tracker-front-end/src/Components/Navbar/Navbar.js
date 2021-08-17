@@ -81,7 +81,7 @@ export default function Navbar() {
             <MenuIcon />
             
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography className={classes.title} noWrap>
           <h1> Battle Tracker </h1>
           {/* <img src={logo} className="logo" alt="logo" /> */}
           </Typography>

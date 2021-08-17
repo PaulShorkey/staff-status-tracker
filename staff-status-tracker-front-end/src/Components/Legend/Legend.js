@@ -5,9 +5,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import green from "@material-ui/core/colors/green";
-import red from "@material-ui/core/colors/red";
-import yellow from "@material-ui/core/colors/yellow";
 import Card from "@material-ui/core/Card"
 
 const useStyles = makeStyles((theme) => ({
