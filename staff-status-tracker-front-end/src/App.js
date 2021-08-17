@@ -8,7 +8,6 @@ import Legend from './Components/Legend/Legend.js'
 import SectionSummaries from './Components/SectionSummaries/SectionSummaries';
 // import Dashboard from './Components/Dashboard/Dashboard.js';
 
-
 function App() {
   return (
     <div className="App">
