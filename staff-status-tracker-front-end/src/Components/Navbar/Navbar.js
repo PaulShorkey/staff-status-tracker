@@ -79,7 +79,6 @@ export default function Navbar() {
             aria-label="open drawer"
           >
             <MenuIcon />
-            
           </IconButton> */}
           <Typography className={classes.title} variant="h6" noWrap>
           <h1> Battle Tracker </h1>

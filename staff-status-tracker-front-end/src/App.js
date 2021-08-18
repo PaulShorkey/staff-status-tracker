@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 // FILE IMPORTS//
@@ -7,6 +7,7 @@ import StickyFooter from './Components/Footer/Footer.js';
 import Legend from './Components/Legend/Legend.js'
 import SectionSummaries from './Components/SectionSummaries/SectionSummaries';
 import Dashboard from './Components/Dashboard/Dashboard.js';
+
 
 function App() {
   return (
@@ -22,7 +23,6 @@ function App() {
 
       <body>
         <Dashboard />
-
       </body>
       <br/>
         <br/>
