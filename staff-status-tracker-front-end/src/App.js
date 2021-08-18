@@ -8,6 +8,10 @@ import Legend from './Components/Legend/Legend.js'
 import SectionSummaries from './Components/SectionSummaries/SectionSummaries';
 // import Dashboard from './Components/Dashboard/Dashboard.js';
 import TaskCard from './Components/TaskCard/TaskCard.js'
+import DrawerList from './Components/TaskCard/DrawerList';
+
+
+
 
 function App() {
   return (
@@ -24,8 +28,8 @@ function App() {
       <br/>
       <br/>
       <body>
-        <SectionSummaries />
-        <TaskCard/>
+          <SectionSummaries />
+          <TaskCard/>
       </body>
       <footer>
         <StickyFooter />

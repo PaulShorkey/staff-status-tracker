@@ -31,33 +31,39 @@ const useStyles = makeStyles({
    }
 });
 
+const itemObj = [
+  { 
+    id: "1",
+    task: "Do a thing 1",
+    status: 'Red'
+  },
+  { 
+    id: "2",
+    task: "Do a thing 2",
+    status: 'Green'
+  },
+  { 
+    id:'3',
+    task: "Do a thing 3",
+    status: 'Red'
+  },
+]
+
 export default function ItemList() {
   const classes = useStyles();
 
-  const [state, setState] = React.useState({
-    bottom: false,
-  });
+  const itemList = itemObj.map((item, index) => {
+    return (
+      <React.Fragment key={index}>
+        <ItemListEntry item={item}/>                
+      </React.Fragment>
+    )
+  })
 
-  
 
- 
-
-  const updateStatus = (newStatus) => {
- 
-    //console.log(`Current Item ${currentItem.currentItem}`)
-    //console.log(`Current Status ${taskState[currentItem.currentItem - 1].status}`);
-    //itemObj[currentItem.currentItem - 1].status = newStatus;
-    //console.log(`New Status ${newStatus}`);
-    //let temp = [...taskState];
-    //taskState[currentItem.currentItem - 1].status = newStatus;
-    //console.log(taskState);
-   // setTaskState({temp});
-  }
-
-  const anchor = "bottom";
   return (
     <div>
-      <ItemListEntry/>
+      {itemList}
     </div>
   );
 }
