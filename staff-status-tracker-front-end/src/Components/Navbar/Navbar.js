@@ -1,12 +1,12 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
+//import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
+//import InputBase from '@material-ui/core/InputBase';
+import { /*alpha,*/ makeStyles } from '@material-ui/core/styles';
+//import MenuIcon from '@material-ui/icons/Menu';
+//import SearchIcon from '@material-ui/icons/Search';
 // import logo from '';
 // import { NavLink as Link } from 'react-router-dom';
 
@@ -81,7 +81,7 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton> */}
           <Typography className={classes.title} variant="h6" noWrap>
-          <h1> Battle Tracker </h1>
+          <div> Battle Tracker </div>
           {/* <img src={logo} className="logo" alt="logo" /> */}
           </Typography>
           {/* <div className={classes.search}>

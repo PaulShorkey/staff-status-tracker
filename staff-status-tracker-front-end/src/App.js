@@ -22,7 +22,7 @@ function App() {
       </legend>
 
       <body>
-        <Dashboard />
+        <Dashboard/>
       </body>
       <br/>
         <br/>

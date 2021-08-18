@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function FormDialog() {
+export default function FormDialog({setRow, row}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -16,7 +16,14 @@ export default function FormDialog() {
 
   const handleClose = () => {
     setOpen(false);
+    setRow({...row, blurb: value})
   };
+
+  const [value, setValue] = useState("") ;
+  
+  const handleChange = e => {
+    setValue(e.target.value)
+  }
 
   return (
     <div>
@@ -37,7 +44,8 @@ export default function FormDialog() {
             type="text"
             fullWidth
             inputProps={{ maxLength: 225 }} //no idea
-
+            value={value}
+            onChange={handleChange}
           />
         </DialogContent>
         <DialogActions>
