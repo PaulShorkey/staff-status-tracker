@@ -6,11 +6,7 @@ import Navbar from './Components/Navbar/Navbar.js';
 import StickyFooter from './Components/Footer/Footer.js';
 import Legend from './Components/Legend/Legend.js'
 import SectionSummaries from './Components/SectionSummaries/SectionSummaries';
-// import Dashboard from './Components/Dashboard/Dashboard.js';
-import TaskCard from './Components/TaskCard/TaskCard.js'
-import DrawerList from './Components/TaskCard/DrawerList';
-
-
+import Dashboard from './Components/Dashboard/Dashboard.js';
 
 
 function App() {
@@ -21,16 +17,18 @@ function App() {
       </header>
       <legend>
         <Legend />
+        <br/>
+        <br/>
       </legend>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+
       <body>
-          <SectionSummaries />
-          <TaskCard/>
+        <Dashboard />
       </body>
+      <br/>
+        <br/>
+      <section>
+        <SectionSummaries />
+      </section>
       <footer>
         <StickyFooter />
         </footer>
