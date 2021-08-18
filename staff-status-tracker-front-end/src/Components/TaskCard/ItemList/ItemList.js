@@ -53,6 +53,7 @@ export default function ItemList() {
   const classes = useStyles();
 
   const itemList = itemObj.map((item, index) => {
+    console.log(item)
     return (
       <React.Fragment key={index}>
         <ItemListEntry item={item}/>                

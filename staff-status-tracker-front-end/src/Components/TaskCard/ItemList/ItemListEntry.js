@@ -48,12 +48,11 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function ItemListEntry(item) {
+export default function ItemListEntry({item}) {
 
 
   const classes = useStyles();
   const [currentItem, setCurrentItem] = React.useState("")
-  console.log(item)
   const [itemState, setItemState] = React.useState(item)
 
   
@@ -80,17 +79,17 @@ export default function ItemListEntry(item) {
 
     //console.log("Hello World")
  
-    console.log(`Current state ${itemState.item.status}`)
+    //console.log(`Current state ${itemState.item.status}`)
     //console.log(`Current Status ${taskState[currentItem.currentItem - 1].status}`);
     //itemObj[currentItem.currentItem - 1].status = newStatus;
     //console.log(`New Status ${newStatus}`);
     //let temp = [...taskState];
     //taskState[currentItem.currentItem - 1].status = newStatus;
     //console.log(taskState);
-    let temp = {...itemState};
-    temp.item.status = newStatus;
+    //let temp = {...itemState};
+    //temp.item.status = newStatus;
     // console.log(temp)
-    //setItemState({ item: temp});
+    setItemState({...itemState, status: newStatus});
   }
 
 
@@ -136,7 +135,7 @@ export default function ItemListEntry(item) {
     return (
       <>
         <div>
-            <ListItemText onClick={toggleDrawer(anchor, true, itemState.item.id)}>{itemState.item.task} : <FiberManualRecordIcon style={{ color: itemState.item.status }} className={classes.wrapIcon}/> </ListItemText>
+            <ListItemText onClick={toggleDrawer(anchor, true, itemState.id)}>{itemState.task} : <FiberManualRecordIcon style={{ color: itemState.status }} className={classes.wrapIcon}/> </ListItemText>
         </div>
         <div>
         <Drawer
