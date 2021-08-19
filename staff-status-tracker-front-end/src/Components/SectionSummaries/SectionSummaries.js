@@ -31,38 +31,59 @@ const useStyles = makeStyles({
 export default function DenseTable() {
   const classes = useStyles();
 
-  const [row, setRow] = useState(
-    [
-      {
-        index: 1,
-        shop: 's1',
-        color: 'red',
-        blurb: 'blurb1'
-      },
-      {
-        index: 2,
-        shop: 's2',
-        color: 'yellow',
-        blurb: 'blurb2'
-      },
-      {
-        index: 3,
-        shop: 's3',
-        color: 'green',
-        blurb: 'blurb3'
-      }
-    ]
-  )
+  // const [row, setRow] = useState(
+  //   [
+  //     {
+  //       index: 1,
+  //       shop: 's1',
+  //       color: 'red',
+  //       blurb: 'blurb1'
+  //     },
+  //     {
+  //       index: 2,
+  //       shop: 's2',
+  //       color: 'yellow',
+  //       blurb: 'blurb2'
+  //     },
+  //     {
+  //       index: 3,
+  //       shop: 's3',
+  //       color: 'green',
+  //       blurb: 'blurb3'
+  //     }
+  //   ]
+  // )
+
+  const row = [
+    {
+      index: 1,
+      shop: 's1',
+      color: 'red',
+      blurb: 'blurb1'
+    },
+    {
+      index: 2,
+      shop: 's2',
+      color: 'yellow',
+      blurb: 'blurb2'
+    },
+    {
+      index: 3,
+      shop: 's3',
+      color: 'green',
+      blurb: 'blurb3'
+    }
+  ]
 
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableBody>
-          {/* {row.map((row, index) => {
+          {row.map((row, index) => {
             return <SectionSummaryEntry key={row.index} row={row} />
-          })} */}
+          })}
 
-          <SectionSummaryEntry row={row} setRow={setRow}/>
+          {/* <SectionSummaryEntry row={row} setRow={setRow}/> */}
         </TableBody>
       </Table>
     </TableContainer>

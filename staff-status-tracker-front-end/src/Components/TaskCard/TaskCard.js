@@ -13,6 +13,8 @@ import { red } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ItemList from "./ItemList/ItemList";
+import { TextField, Button } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,6 +47,7 @@ export default function TaskCard() {
     setExpanded(!expanded);
   };
 
+
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -60,7 +63,10 @@ export default function TaskCard() {
         }
         title="Title of Task"
         subheader="September 14, 2021"
-      />
+        
+      >
+        
+      </CardHeader>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           <ul>
@@ -68,7 +74,11 @@ export default function TaskCard() {
           </ul>
         </Typography>
       </CardContent>
+      <TextField type="text" fullWidth={true} label='Input Task' />
+      <Button fullWidth={true} variant="contained" color="primary" >Add Task</Button>
+      
       <CardActions disableSpacing>
+      
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -79,6 +89,7 @@ export default function TaskCard() {
         >
           <ExpandMoreIcon />
         </IconButton>
+        <DeleteIcon fontSize='medium'/>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>

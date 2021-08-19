@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function FormDialog({setRow, row}) {
+export default function FormDialog({setRowState, rowState}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -16,7 +16,7 @@ export default function FormDialog({setRow, row}) {
 
   const handleClose = () => {
     setOpen(false);
-    setRow({...row, blurb: value})
+    setRowState({...rowState, blurb: value})
   };
 
   const [value, setValue] = useState("") ;

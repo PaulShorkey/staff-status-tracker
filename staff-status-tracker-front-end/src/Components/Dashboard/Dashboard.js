@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
     Card, 
     Grid,
-    Paper
+    Paper,
+    Button
 } from '@material-ui/core'
 
 // FILE IMPORTS//
@@ -27,12 +28,35 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Dashboard () {
+  const [{card}, setCard] = useState({card: []})
+
+  const generateKey = (pre) => {
+    return `${ pre }_${ new Date().getTime() }`;
+}
+
+  const addCard = () => {
+    card.push(
+    <Grid item >
+      <Paper>
+        <TaskCard key={generateKey(card.length)}/>
+      </Paper>
+    </Grid>)
+    setCard({card: [...card]})
+  }
+
+  
+
+
     const classes = useStyles();
+
+
     
     return (
         <container >
+          
            <Grid container  spacing={5} direction='row' justify = "center">
-                <Grid item>
+           <Button variant='contained' color='primary' onClick={addCard} fullWidth={true}>Add Task Card</Button>
+                {/* <Grid item>
                   <Paper><TaskCard /></Paper>
                 </Grid>
                 <Grid item >
@@ -43,8 +67,8 @@ export default function Dashboard () {
                 </Grid>
                 <Grid item >
                   <Paper><TaskCard /></Paper>
-                </Grid>
-               
+                </Grid> */}
+               {card}
           </Grid>
         </container>
        

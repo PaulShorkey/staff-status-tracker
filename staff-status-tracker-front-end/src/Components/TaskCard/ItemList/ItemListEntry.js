@@ -105,7 +105,7 @@ export default function ItemListEntry({item}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-          <ListItem button key={'Expected'} onClick={() => updateStatus("Green")}>
+          <ListItem  button key={'Expected'} onClick={() => updateStatus("Green")}>
             <ListItemIcon>
               {<FiberManualRecordIcon style={{ color: 'Green' }} className={classes.wrapIcon}/> }
             </ListItemIcon>
@@ -135,7 +135,7 @@ export default function ItemListEntry({item}) {
     return (
       <>
         <div>
-            <ListItemText onClick={toggleDrawer(anchor, true, itemState.id)}>{itemState.task} : <FiberManualRecordIcon style={{ color: itemState.status }} className={classes.wrapIcon}/> </ListItemText>
+            <ListItemText style={{cursor:'pointer'}} onClick={toggleDrawer(anchor, true, itemState.id)}>{itemState.task} : <FiberManualRecordIcon style={{ color: itemState.status }} className={classes.wrapIcon}/> </ListItemText>
         </div>
         <div>
         <Drawer

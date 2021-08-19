@@ -4,7 +4,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 
-export default function FadeMenu({setRow, color, row}) {
+export default function FadeMenu({setRowState, rowState}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -14,12 +14,12 @@ export default function FadeMenu({setRow, color, row}) {
 
   const handleClose = (e) => {
     setAnchorEl(null);
-    setRow({...row, color: e.target.textContent})
+    setRowState({...rowState, color: e.target.textContent})
   };
 
   return (
     <div>
-      <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick} style={{color: color}}>
+      <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick} style={{color: rowState.color}}>
         Change
       </Button>
       <Menu
