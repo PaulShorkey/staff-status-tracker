@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { /*alpha,*/ makeStyles } from '@material-ui/core/styles';
 //import MenuIcon from '@material-ui/icons/Menu';
 //import SearchIcon from '@material-ui/icons/Search';
-// import logo from '';
+import logo from './seal.svg';
 // import { NavLink as Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -69,34 +69,12 @@ export default function Navbar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} display="flex" alignitems="center" justifycontent="center">
       <AppBar position="static">
         <Toolbar>
-          {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton> */}
-          <Typography className={classes.title} variant="h6" noWrap>
-          <div> Battle Tracker </div>
-          {/* <img src={logo} className="logo" alt="logo" /> */}
-          </Typography>
-          {/* <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div> */}
+          
+        <h1>Battle</h1> <img src={logo} className="logo" alt="logo" align-items="center" width='400px' height='200px' /> <h1>Tracker</h1>
+          
         </Toolbar>
       </AppBar>
     </div>

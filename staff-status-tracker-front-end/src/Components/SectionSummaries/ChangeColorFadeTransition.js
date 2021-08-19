@@ -30,9 +30,9 @@ export default function FadeMenu({setRowState, rowState}) {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Green</MenuItem>
-        <MenuItem onClick={handleClose}>Yellow</MenuItem>
-        <MenuItem onClick={handleClose}>Red</MenuItem>
+        <MenuItem id='change-green' onClick={handleClose}>Green</MenuItem>
+        <MenuItem id='change-yellow' onClick={handleClose}>Yellow</MenuItem>
+        <MenuItem id='change-red' onClick={handleClose}>Red</MenuItem>
       </Menu>
     </div>
   );

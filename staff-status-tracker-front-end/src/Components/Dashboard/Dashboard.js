@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Dashboard () {
-  // const [card, setCard] = useState([])
+  // const [{card}, setCard] = useState({card: []})
 
 //   const generateKey = (pre) => {
 //     return `${ pre }_${ new Date().getTime() }`;
@@ -37,13 +37,13 @@ export default function Dashboard () {
 
 
   // const addCard = () => {
-  //   setCard((card) => {
-  //     return [...card, <Grid item >
-  //       <Paper>
-  //         <TaskCard card={card}/>
-  //       </Paper>
-  //     </Grid> ]
-  //   })
+  //   card.push(
+  //     <Grid item>
+  //                 <Paper><TaskCard /></Paper>
+  //               </Grid>
+    
+  //     )
+  //   setCard({ card: [...card]})
   // }
 
   // const removeCard = (e) => {
@@ -62,7 +62,7 @@ export default function Dashboard () {
         <Container >
           
            <Grid container  spacing={5} direction='row' justifyContent = "center">
-           {/* <Button variant='contained' color='primary' onClick={addCard} fullWidth={true}>Add Task Card</Button> */}
+           {/* <Button variant='contained' color='primary' fullWidth={true}>Add Task Card</Button> */}
                 <Grid item>
                   <Paper><TaskCard /></Paper>
                 </Grid>
@@ -72,9 +72,7 @@ export default function Dashboard () {
                 <Grid item >
                   <Paper><TaskCard /></Paper>
                 </Grid>
-               {/* {card.map(card => {
-                 return card
-               })} */}
+               
           </Grid>
         </Container>
        

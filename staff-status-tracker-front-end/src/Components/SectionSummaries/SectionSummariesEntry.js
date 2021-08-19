@@ -32,7 +32,7 @@ export default function SectionSummaryEntry({row, setRow}) {
             <TableCell component="th" scope="row" style={{width:'10%'}}>
                 {rowState.shop}
             </TableCell>
-            <TableCell align="left" style={{width:'10%', backgroundColor: rowState.color}}> 
+            <TableCell id='status-color' align="left" style={{width:'10%', backgroundColor: rowState.color}}> 
                 <FadeMenu rowState={rowState} setRowState={setRowState} color={row.color} > 
                     Color 
                 </FadeMenu> 
