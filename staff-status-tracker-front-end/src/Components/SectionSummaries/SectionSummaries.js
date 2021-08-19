@@ -7,10 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 // import TableHead from '@material-ui/core/TableHead';
 // import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-// import Button from '@material-ui/core/Button'
-// import FormDialog from './UpdateFormDialogue.js'
-// import FadeMenu from './ChangeColorFadeTransition.js'
-import SectionSummaryEntry from './SectionSummariesEntry.js'
+import Button from '@material-ui/core/Button'
+import FormDialog from './UpdateFormDialogue.js'
+const knex = require('knex')(require('../../knexfile.js')[process.env.NODE_ENV]);
+
 
 const useStyles = makeStyles({
   table: {
@@ -21,14 +21,25 @@ const useStyles = makeStyles({
   }
 });
 
-// const handleClick = (event, id, cell) => {
-//   const { selected } = event.state;
-//   const selectedCell = cell;
-//   console.log('clicking')
-//   event.setState({ selected: selectedCell });
-// };
+function createData(section, status, comments) {
+  return { section, status, comments };
+}
+
+let test = knex.select("*")
+.from('"section-status"')
+.then(data =>
+  console.log(data))
+
+const rows = [
+  createData('S1', 'Green', 'All of the people are ready'),
+  createData('S2', 'Yellow', 'No intelegence, we werent able to find anything lkjhlkjhlkjhlkjlkjhlkjhlkjhlkjlkjhkllkjhlkjhlkjhlkjljh lkjhljkh jhlkjhlkjlkjhlkjlkjhlkjhlkjlkjhlkjhlkjhlkjhlkjhlkjhlkjhlklkjhklhlkjhlkjhlklkjlkjhlkjhlkjhlkjhkljhlkjhlkjhklhlkjhlkjh'),
+  createData('S3', 'Red', 'We should use MDMP')
+];
 
 export default function DenseTable() {
+
+
+
   const classes = useStyles();
 
   // const [row, setRow] = useState(
