@@ -9,7 +9,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
 import FormDialog from './UpdateFormDialogue.js'
+import SectionSummaryEntry from "./SectionSummariesEntry"
 const knex = require('knex')(require('../../knexfile.js')[process.env.NODE_ENV]);
+
 
 
 const useStyles = makeStyles({
@@ -25,10 +27,7 @@ function createData(section, status, comments) {
   return { section, status, comments };
 }
 
-let test = knex.select("*")
-.from('"section-status"')
-.then(data =>
-  console.log(data))
+
 
 const rows = [
   createData('S1', 'Green', 'All of the people are ready'),
@@ -38,32 +37,15 @@ const rows = [
 
 export default function DenseTable() {
 
+  let test = knex.select("*")
+  .from('"section-status"')
+  .then(data =>
+    console.log(data))
+
 
 
   const classes = useStyles();
 
-  // const [row, setRow] = useState(
-  //   [
-  //     {
-  //       index: 1,
-  //       shop: 's1',
-  //       color: 'red',
-  //       blurb: 'blurb1'
-  //     },
-  //     {
-  //       index: 2,
-  //       shop: 's2',
-  //       color: 'yellow',
-  //       blurb: 'blurb2'
-  //     },
-  //     {
-  //       index: 3,
-  //       shop: 's3',
-  //       color: 'green',
-  //       blurb: 'blurb3'
-  //     }
-  //   ]
-  // )
 
   const row = [
     {
