@@ -16,9 +16,15 @@ import ItemList from "./ItemList/ItemList";
 import { TextField, Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+  },
+  deleteButton: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
   },
   media: {
     height: 0,
@@ -39,13 +45,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TaskCard() {
+export default function TaskCard({removeCard}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  // console.log(card)
+
+  
 
 
   return (
@@ -89,7 +99,11 @@ export default function TaskCard() {
         >
           <ExpandMoreIcon />
         </IconButton>
-        <DeleteIcon fontSize='medium'/>
+
+        <IconButton aria-label="delete" onClick={removeCard}>
+          <DeleteIcon fontSize='medium' />
+        </IconButton>
+        
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>

@@ -23,7 +23,6 @@ import FormDialog from './UpdateFormDialogue.js'
 export default function SectionSummaryEntry({row, setRow}) {
     const [rowState, setRowState] = useState(row)
 
-    console.log(rowState)
 
 
 

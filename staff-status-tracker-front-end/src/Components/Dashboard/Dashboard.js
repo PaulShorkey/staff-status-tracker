@@ -3,7 +3,8 @@ import {
     Card, 
     Grid,
     Paper,
-    Button
+    Button,
+    Container
 } from '@material-ui/core'
 
 // FILE IMPORTS//
@@ -28,21 +29,27 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Dashboard () {
-  const [{card}, setCard] = useState({card: []})
+  // const [card, setCard] = useState([])
 
-  const generateKey = (pre) => {
-    return `${ pre }_${ new Date().getTime() }`;
-}
+//   const generateKey = (pre) => {
+//     return `${ pre }_${ new Date().getTime() }`;
+// }
 
-  const addCard = () => {
-    card.push(
-    <Grid item >
-      <Paper>
-        <TaskCard key={generateKey(card.length)}/>
-      </Paper>
-    </Grid>)
-    setCard({card: [...card]})
-  }
+
+  // const addCard = () => {
+  //   setCard((card) => {
+  //     return [...card, <Grid item >
+  //       <Paper>
+  //         <TaskCard card={card}/>
+  //       </Paper>
+  //     </Grid> ]
+  //   })
+  // }
+
+  // const removeCard = (e) => {
+  //   console.log(card)
+  // }
+
 
   
 
@@ -52,11 +59,11 @@ export default function Dashboard () {
 
     
     return (
-        <container >
+        <Container >
           
-           <Grid container  spacing={5} direction='row' justify = "center">
-           <Button variant='contained' color='primary' onClick={addCard} fullWidth={true}>Add Task Card</Button>
-                {/* <Grid item>
+           <Grid container  spacing={5} direction='row' justifyContent = "center">
+           {/* <Button variant='contained' color='primary' onClick={addCard} fullWidth={true}>Add Task Card</Button> */}
+                <Grid item>
                   <Paper><TaskCard /></Paper>
                 </Grid>
                 <Grid item >
@@ -65,12 +72,11 @@ export default function Dashboard () {
                 <Grid item >
                   <Paper><TaskCard /></Paper>
                 </Grid>
-                <Grid item >
-                  <Paper><TaskCard /></Paper>
-                </Grid> */}
-               {card}
+               {/* {card.map(card => {
+                 return card
+               })} */}
           </Grid>
-        </container>
+        </Container>
        
     )
 }

@@ -10,7 +10,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
 import FormDialog from './UpdateFormDialogue.js'
-const knex = require('knex')(require('../../knexfile.js')[process.env.NODE_ENV]);
+// const knex = require('knex')(require('../../knexfile.js')[process.env.NODE_ENV]);
 
 
 
@@ -27,16 +27,16 @@ function createData(section, status, comments) {
   return { section, status, comments };
 }
 
-let test = knex.select("*")
-.from('"section-status"')
-.then(data =>
-  console.log(data))
+// let test = knex.select("*")
+// .from('"section-status"')
+// .then(data =>
+//   console.log(data))
 
-const rows = [
-  createData('S1', 'Green', 'All of the people are ready'),
-  createData('S2', 'Yellow', 'No intelegence, we werent able to find anything lkjhlkjhlkjhlkjlkjhlkjhlkjhlkjlkjhkllkjhlkjhlkjhlkjljh lkjhljkh jhlkjhlkjlkjhlkjlkjhlkjhlkjlkjhlkjhlkjhlkjhlkjhlkjhlkjhlklkjhklhlkjhlkjhlklkjlkjhlkjhlkjhlkjhkljhlkjhlkjhklhlkjhlkjh'),
-  createData('S3', 'Red', 'We should use MDMP')
-];
+// const rows = [
+//   createData('S1', 'Green', 'All of the people are ready'),
+//   createData('S2', 'Yellow', 'No intelegence, we werent able to find anything lkjhlkjhlkjhlkjlkjhlkjhlkjhlkjlkjhkllkjhlkjhlkjhlkjljh lkjhljkh jhlkjhlkjlkjhlkjlkjhlkjhlkjlkjhlkjhlkjhlkjhlkjhlkjhlkjhlklkjhklhlkjhlkjhlklkjlkjhlkjhlkjhlkjhkljhlkjhlkjhklhlkjhlkjh'),
+//   createData('S3', 'Red', 'We should use MDMP')
+// ];
 
 export default function DenseTable() {
 
