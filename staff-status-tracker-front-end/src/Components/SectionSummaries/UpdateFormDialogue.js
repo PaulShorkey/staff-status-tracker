@@ -52,7 +52,7 @@ export default function FormDialog({setRowState, rowState}) {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button id='updateButton' onClick={handleClose} color="primary">
             Update
           </Button>
         </DialogActions>
