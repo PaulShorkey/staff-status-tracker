@@ -76,19 +76,6 @@ export default function ItemListEntry({item}) {
   };
 
   const updateStatus = (newStatus) => {
-
-    //console.log("Hello World")
- 
-    //console.log(`Current state ${itemState.item.status}`)
-    //console.log(`Current Status ${taskState[currentItem.currentItem - 1].status}`);
-    //itemObj[currentItem.currentItem - 1].status = newStatus;
-    //console.log(`New Status ${newStatus}`);
-    //let temp = [...taskState];
-    //taskState[currentItem.currentItem - 1].status = newStatus;
-    //console.log(taskState);
-    //let temp = {...itemState};
-    //temp.item.status = newStatus;
-    // console.log(temp)
     setItemState({...itemState, status: newStatus});
   }
 
