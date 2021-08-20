@@ -50,6 +50,9 @@ const itemObj = [
 ]
 
 export default function ItemList() {
+
+  const [itemListState, setItemListState] = React.useState([])
+
   const classes = useStyles();
 
   const itemList = itemObj.map((item, index) => {

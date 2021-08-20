@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -11,10 +11,29 @@ export default function FadeMenu({setRowState, rowState}) {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
-  const handleClose = (e) => {
+  
+  const handleClose = (color) => {
+    console.log(color)
     setAnchorEl(null);
-    setRowState({...rowState, color: e.target.textContent})
+    //setRowState({...rowState, color: color.target.textContent})
+    
+    
+    const requestOptions = {
+        method: 'PUT',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "section": rowState.section,
+          "status": color,
+          "comments": rowState.comments
+          })
+    };
+      
+      fetch(`http://localhost:3001/status/${rowState.id}`, requestOptions)
+            .then(response => response.json())
+            .then(window.location.reload())
   };
 
   return (
@@ -30,6 +49,7 @@ export default function FadeMenu({setRowState, rowState}) {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
+
         <MenuItem id='change-green' onClick={handleClose}>Green</MenuItem>
         <MenuItem id='change-yellow' onClick={handleClose}>Yellow</MenuItem>
         <MenuItem id='change-red' onClick={handleClose}>Red</MenuItem>
@@ -37,3 +57,5 @@ export default function FadeMenu({setRowState, rowState}) {
     </div>
   );
 }
+
+//onClick={() => updateStatus("Yellow")}
