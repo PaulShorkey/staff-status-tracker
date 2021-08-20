@@ -63,7 +63,7 @@ export default function TaskCard({removeCard}) {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            ER
+            : )
           </Avatar>
         }
         action={
@@ -78,7 +78,7 @@ export default function TaskCard({removeCard}) {
         
       </CardHeader>
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography component={'span'} variant="body2" color="textSecondary" component="p">
           <ul>
             <ItemList />
           </ul>
@@ -107,9 +107,16 @@ export default function TaskCard({removeCard}) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Details:</Typography>
-          <Typography paragraph>
-            According to all known laws of aviation, there is no way a bee
+          <TextField
+            id="outlined-multiline-static"
+            label="Details"
+            multiline
+            rows={25}
+            variant="outlined"
+          />
+        {/* <Typography paragraph>Details:</Typography>
+          <Typography paragraph> */}
+            {/* According to all known laws of aviation, there is no way a bee
             should be able to fly. Its wings are too small to get its fat little
             body off the ground. The bee, of course, flies anyway because bees
             don't care what humans think is impossible. Yellow, black. Yellow,
@@ -133,8 +140,8 @@ export default function TaskCard({removeCard}) {
             the way. I love this incorporating an amusement park into our day.
             That's why we don't need vacations. Boy, quite a bit of pomp...
             under the circumstances. - Well, Adam, today we are men. - We are! -
-            Bee-men. - Amen! Hallelujah!
-          </Typography>
+            Bee-men. - Amen! Hallelujah! */}
+          {/* </Typography> */}
         </CardContent>
       </Collapse>
     </Card>

@@ -96,19 +96,19 @@ export default function ItemListEntry({item}) {
             <ListItemIcon>
               {<FiberManualRecordIcon style={{ color: 'Green' }} className={classes.wrapIcon}/> }
             </ListItemIcon>
-            <ListItemText primary='Expected' />
+            <ListItemText id='expected' primary='Expected' />
           </ListItem>
           <ListItem button key={'Abnormal'} onClick={() => updateStatus("Yellow")}>
             <ListItemIcon>
               {<FiberManualRecordIcon style={{ color: 'Yellow' }} className={classes.wrapIcon}/> }
             </ListItemIcon>
-            <ListItemText primary='Abnormal' />
+            <ListItemText id='abnormal'  primary='Abnormal' />
           </ListItem>
           <ListItem button key={'Action Required'} onClick={() => updateStatus("Red")}>
             <ListItemIcon>
               {<FiberManualRecordIcon style={{ color: 'Red' }} className={classes.wrapIcon}/> }
             </ListItemIcon>
-            <ListItemText primary='Action Required' />
+            <ListItemText id='action-required'  primary='Action Required' />
           </ListItem>
       </List>
     </div>
@@ -122,7 +122,7 @@ export default function ItemListEntry({item}) {
     return (
       <>
         <div>
-            <ListItemText style={{cursor:'pointer'}} onClick={toggleDrawer(anchor, true, itemState.id)}>{itemState.task} : <FiberManualRecordIcon style={{ color: itemState.status }} className={classes.wrapIcon}/> </ListItemText>
+            <ListItemText id='task-card-task' style={{cursor:'pointer'}} onClick={toggleDrawer(anchor, true, itemState.id)} >{itemState.task} : <FiberManualRecordIcon id='task-status-icon'  style={{ color: itemState.status }} className={classes.wrapIcon}/> </ListItemText>
         </div>
         <div>
         <Drawer

@@ -8,7 +8,6 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/x-grid": "^4.0.0-alpha.37",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "knex": "^0.21.21",
     "mssql": "^7.2.0",
@@ -44,6 +43,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.0",
+    "@testing-library/react": "^11.2.7",
     "cypress": "^8.3.0"
   }
 }

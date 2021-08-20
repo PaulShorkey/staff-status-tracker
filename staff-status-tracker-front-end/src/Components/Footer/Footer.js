@@ -7,7 +7,7 @@ import Link from '@material-ui/core/Link';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary">
+    <Typography component={'span'} variant="body2" color="textSecondary">
       <Link color="inherit" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
         Galvanize Cohort 3
       </Link>
@@ -42,7 +42,7 @@ export default function StickyFooter() {
       <CssBaseline />
       <footer className={classes.footer}>
         <Container maxWidth="sm">
-          <Typography variant="body1">Brought to you by the Wagner Breakout Room</Typography>
+          <Typography component={'span'} variant="body1">Brought to you by the Wagner Breakout Room</Typography>
           <Copyright />
         </Container>
       </footer>

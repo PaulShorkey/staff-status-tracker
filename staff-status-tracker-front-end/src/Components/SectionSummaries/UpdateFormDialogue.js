@@ -27,7 +27,7 @@ export default function UpdateForm({setRowState, rowState}) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button id='updateButton' variant="outlined" color="primary" onClick={handleClickOpen}>
       Update      
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -52,7 +52,7 @@ export default function UpdateForm({setRowState, rowState}) {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button id='updateButton' onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" id='popup-update-button'>
             Update
           </Button>
         </DialogActions>
