@@ -6,22 +6,28 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('section-status').insert([
         {
-          id: 1, 
           section: 'S1',
           status: "Red",
-          comments:""
+          poc:"Paul Dykes",
+          description:""
         },
         {
-          id: 2, 
           section: 'S2',
           status: "Green",
-          comments:""
+          poc:"Kerim H-K",
+          description:""
         },
         {
-          id: 3, 
           section: 'S3',
           status: "Green",
-          comments:""
+          poc:"Paul S",
+          description:""
+        },
+        {
+          section: 'S3',
+          status: "Green",
+          poc:"Edgar",
+          description:""
         },
       ]);
     });

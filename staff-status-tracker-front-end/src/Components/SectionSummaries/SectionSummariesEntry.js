@@ -5,10 +5,12 @@ import TableCell from '@material-ui/core/TableCell';
 //import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { useState, useEffect } from 'react';
-import FadeMenu from './ChangeColorFadeTransition.js'
 // import { makeStyles } from '@material-ui/core/styles';
-import FormDialog from './UpdateFormDialogue.js'
 
+///FILE IMPORTS
+import FadeMenu from './ChangeColorFadeTransition.js'
+import UpdateForm from './UpdateFormDialogue.js'
+import DeleteButton from './DeleteButton.js'
 
 
 export default function SectionSummaryEntry({index, id}) {
@@ -16,7 +18,7 @@ export default function SectionSummaryEntry({index, id}) {
     const [rowState, setRowState] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:3001/status/${id}`)
+        fetch(`http://localhost:3001/section/${id}`)
         .then(res => res.json())
         .then((data)=> {
           setRowState(data[0]);
@@ -37,7 +39,8 @@ export default function SectionSummaryEntry({index, id}) {
                 </FadeMenu> 
             </TableCell>
             <TableCell align="left" style={{width:'70%'}}>{rowState.section}</TableCell>
-            <TableCell align="left" style={{width:'70%'}}> <FormDialog rowState={rowState} setRowState={setRowState}/></TableCell>
+            <TableCell align="left" style={{width:'70%'}}> <UpdateForm rowState={rowState} setRowState={setRowState}/></TableCell>
+            <TableCell> <DeleteButton rowState={rowState} setRowState={setRowState}/></TableCell>
         </TableRow>
      )
 

@@ -3,8 +3,8 @@ exports.up = function(knex) {
       table.increments('id'); // adds an auto incrementing PK column
       table.string('section').notNullable();
       table.string('status');
-      table.string('comments');
-      // table.timestamps(true, true); // adds created_at and updated_at
+      table.string('poc');
+      table.string('description');
     });
   };
   

@@ -11,19 +11,14 @@ export default function FadeMenu({setRowState, rowState}) {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
- 
-    // POST request using fetch inside useEffect React hook
   
-    
-
   const handleClose = (color) => {
     console.log(color)
     setAnchorEl(null);
     //setRowState({...rowState, color: color.target.textContent})
     
     
-      const requestOptions = {
+    const requestOptions = {
         method: 'PUT',
         mode: 'cors',
         headers: {
@@ -39,9 +34,6 @@ export default function FadeMenu({setRowState, rowState}) {
       fetch(`http://localhost:3001/status/${rowState.id}`, requestOptions)
             .then(response => response.json())
             .then(window.location.reload())
- 
-     
-    
   };
 
   return (
