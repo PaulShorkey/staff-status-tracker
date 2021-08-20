@@ -33,10 +33,8 @@ export default function SectionSummaryEntry({index, id}) {
             <TableCell component="th" scope="row" style={{width:'10%'}}>
                 {rowState.section}
             </TableCell>
-
-            <TableCell id='status-color' align="left" style={{width:'10%', backgroundColor: rowState.color}}> 
-                <FadeMenu rowState={rowState} setRowState={setRowState} color={row.color} > 
-
+            <TableCell id='status-color' align="left" style={{width:'10%', backgroundColor: rowState.section}}> 
+                <FadeMenu rowState={rowState} setRowState={setRowState} color={rowState.section} > 
                     Color 
                 </FadeMenu> 
             </TableCell>
