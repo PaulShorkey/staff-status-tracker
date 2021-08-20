@@ -44,7 +44,7 @@ app.post('/section', function(req, res) {
         }))
 })
 
-app.put('/status/:id', function(req, res) {
+app.put('/section/:id', function(req, res) {
   console.log(req.body);
 
   knex('section-status')
