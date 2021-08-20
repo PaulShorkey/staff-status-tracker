@@ -31,14 +31,13 @@ export default function DenseTable() {
   const classes = useStyles();
 
   useEffect(() => {
-    fetch("http://localhost:3001/status")
+    fetch("http://localhost:3001/section")
     .then(res => res.json())
     .then((data)=> {
-      setSummaryState(data);
+      setSummaryState(data)
     })
     .catch(err => console.log(err))
   }, [])
-  
   
   return (
     <TableContainer component={Paper}>

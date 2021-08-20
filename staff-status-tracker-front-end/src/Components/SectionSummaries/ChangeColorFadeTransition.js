@@ -17,7 +17,7 @@ export default function FadeMenu({setRowState, rowState}) {
     setAnchorEl(null);
     //setRowState({...rowState, color: color.target.textContent})
     
-    
+  
     const requestOptions = {
         method: 'PUT',
         mode: 'cors',
@@ -27,11 +27,12 @@ export default function FadeMenu({setRowState, rowState}) {
         body: JSON.stringify({
           "section": rowState.section,
           "status": color,
-          "comments": rowState.comments
+          "poc": rowState.poc,
+          "description": rowState.description
           })
     };
       
-      fetch(`http://localhost:3001/status/${rowState.id}`, requestOptions)
+      fetch(`http://localhost:3001/section/${rowState.id}`, requestOptions)
             .then(response => response.json())
             .then(window.location.reload())
   };
@@ -50,9 +51,9 @@ export default function FadeMenu({setRowState, rowState}) {
         TransitionComponent={Fade}
       >
 
-        <MenuItem id='change-green' onClick={handleClose}>Green</MenuItem>
-        <MenuItem id='change-yellow' onClick={handleClose}>Yellow</MenuItem>
-        <MenuItem id='change-red' onClick={handleClose}>Red</MenuItem>
+        <MenuItem id='change-green' onClick={() => handleClose("Green")}>Green</MenuItem>
+        <MenuItem id='change-yellow' onClick={() => handleClose("Yellow")}>Yellow</MenuItem>
+        <MenuItem id='change-red' onClick={() => handleClose("Red")}>Red</MenuItem>
       </Menu>
     </div>
   );

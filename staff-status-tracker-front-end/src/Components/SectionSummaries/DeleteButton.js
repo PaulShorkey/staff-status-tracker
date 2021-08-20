@@ -27,7 +27,7 @@ export default function DeleteButton({rowState, setRowState}) {
         },
     };
       console.log('CLICKING DELETE BUTTON')
-      fetch(`http://localhost:3001/status/${rowState.id}`, requestOptions)
+      fetch(`http://localhost:3001/section/${rowState.id}`, requestOptions)
             .then(response => response.json())
             .then(window.location.reload())
   };
