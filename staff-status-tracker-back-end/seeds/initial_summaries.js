@@ -24,7 +24,7 @@ exports.seed = function(knex) {
           description:""
         },
         {
-          section: 'S3',
+          section: 'S4',
           status: "Green",
           poc:"Edgar",
           description:""

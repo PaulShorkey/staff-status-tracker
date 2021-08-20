@@ -44,11 +44,11 @@ app.post('/section', function(req, res) {
         }))
 })
 
-app.put('/section/:id', function(req, res) {
+app.put('/section/:section_id', function(req, res) {
   console.log(req.body);
 
   knex('section-status')
-    .where('id', req.params.id)
+    .where('id', req.params.section_id)
     .update({
       section: req.body.section,
       status: req.body.status,
@@ -64,12 +64,12 @@ app.put('/section/:id', function(req, res) {
 })
 
 
-app.get('/section/:id', function(req, res) {
+app.get('/section/:section_id', function(req, res) {
     
   knex 
       .select('*')
       .from('section-status')
-      .where('id', req.params.id)
+      .where('id', req.params.section_id)
       .then(data => res.status(200).json(data))
       .catch(err =>
           res.status(500).json({
@@ -79,12 +79,11 @@ app.get('/section/:id', function(req, res) {
       );
 })
 
-app.get('/section/:id/tasks', function(req, res) {
+app.get('/section/:section_id/cards', function(req, res) {
+  console.log(req.params.section_id)
     
-  knex 
-      .select('*')
-      .from('section-status')
-      .where('id', req.params.id)
+  knex.select('*').from('section-card').join('section-status', 'section-card.section_id', 'section-status.id')
+      .where('section-status.id', req.params.section_id)
       .then(data => res.status(200).json(data))
       .catch(err =>
           res.status(500).json({
@@ -94,10 +93,10 @@ app.get('/section/:id/tasks', function(req, res) {
       );
 })
 
-app.delete(`/section/:id`, function (req, res){
+app.delete(`/section/:section_id`, function (req, res){
   
    knex('section-status')
-       .where('id', req.params.id)
+       .where('id', req.params.section_id)
        .del()
        .then(data => res.status(200).json(data))
        .catch(err =>
@@ -126,7 +125,6 @@ app.post('/card', function(req, res) {
   knex('section-card')
     .insert({
       activity: req.body.activity,
-      status: req.body.status,
       details: req.body.details,
       section: req.body.section
     })
@@ -138,14 +136,13 @@ app.post('/card', function(req, res) {
         }))
 })
 
-app.put('/card/:id', function(req, res) {
+app.put('/card/:card_id', function(req, res) {
   console.log(req.body);
 
   knex('section-card')
-    .where('id', req.params.id)
+    .where('id', req.params.card_id)
     .update({
       activity: req.body.activity,
-      status: req.body.status,
       details: req.body.details,
       section: req.body.section
     })
@@ -158,12 +155,12 @@ app.put('/card/:id', function(req, res) {
 })
 
 
-app.get('/card/:id', function(req, res) {
+app.get('/card/:card_id', function(req, res) {
     
   knex 
       .select('*')
       .from('section-card')
-      .where('id', req.params.id)
+      .where('id', req.params.card_id)
       .then(data => res.status(200).json(data))
       .catch(err =>
           res.status(500).json({
@@ -173,18 +170,89 @@ app.get('/card/:id', function(req, res) {
       );
 })
 
-app.delete(`/card/:id`, function (req, res){
+
+
+app.get('/card/:card_id/tasks', function(req, res) {
+    
+  knex.select('*').from('section-tasks').join('section-card', 'section-tasks.card_id', 'section-card.id')
+  .where('section-card.id', req.params.card_id)
+  .then(data => res.status(200).json(data))
+  .catch(err =>
+      res.status(500).json({
+        message:
+          'The data you are looking for could not be found. Please try again'
+      })
+  );
+})
+
+
+
+
+
+
+app.delete(`/card/:card_id`, function (req, res){
   
-   knex('section-card')
-       .where('id', req.params.id)
-       .del()
-       .then(data => res.status(200).json(data))
-       .catch(err =>
-           res.status(500).json({
-             message:
-               'The data you are looking for could not be found. Please try again'
-           })
-       );
+  knex('section-card')
+  .where('id', req.params.card_id)
+  .del()
+  .then(data => res.status(200).json(data))
+  .catch(err =>
+      res.status(500).json({
+        message:
+          'The data you are looking for could not be found. Please try again'
+      })
+  );
+})
+
+
+
+
+app.put('/task/:task_id', function(req, res) {
+  console.log(req.body);
+
+  knex('section-tasks')
+    .where('id', req.params.task_id)
+    .update({
+      task: req.body.task,
+      status: req.body.status,
+      card_id: req.body.card_id
+    })
+    .then(data => res.status(200).json(data))
+    .catch(err => 
+        res.status(500).json({
+            message:
+                'Somethins up'
+        }))
+})
+
+app.post('/task', function(req, res) {
+  //console.log(req.body);
+  knex('section-task')
+    .insert({
+      task: req.body.task,
+      status: req.body.status,
+    })
+    .then(data => res.status(200).json(data))
+    .catch(err => 
+        res.status(500).json({
+            message:
+                'Somethins up'
+        }))
+})
+
+app.delete(`/task/:task_id`, function (req, res){
+  
+  console.log(req.body)
+  knex('section-tasks')
+  .where('id', req.params.task_id)
+  .del()
+  .then(data => res.status(200).json(data))
+  .catch(err =>
+      res.status(500).json({
+        message:
+          'The data you are looking for could not be found. Please try again'
+      })
+  );
 })
 
 

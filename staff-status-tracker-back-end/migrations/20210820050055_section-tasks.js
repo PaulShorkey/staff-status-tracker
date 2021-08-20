@@ -3,7 +3,9 @@ exports.up = function(knex) {
       table.increments('id'); // adds an auto incrementing PK column
       table.string('task').notNullable();
       table.string('status');
-      table.string('card');
+      table.integer('card_id');
+
+      table.foreign('card_id').references('id').inTable("section-card"); 
     });
   };
   
