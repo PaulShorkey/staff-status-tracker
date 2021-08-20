@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
     Card, 
     Grid,
@@ -29,41 +29,33 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Dashboard () {
-  // const [{card}, setCard] = useState({card: []})
-
-//   const generateKey = (pre) => {
-//     return `${ pre }_${ new Date().getTime() }`;
-// }
-
-
-  // const addCard = () => {
-  //   card.push(
-  //     <Grid item>
-  //                 <Paper><TaskCard /></Paper>
-  //               </Grid>
-    
-  //     )
-  //   setCard({ card: [...card]})
-  // }
-
-  // const removeCard = (e) => {
-  //   console.log(card)
-  // }
-
-
-  
-
+    const [cardState, setCardState] = React.useState([])
 
     const classes = useStyles();
 
+    useEffect(() => {
+      fetch("http://localhost:3001/card")
+      .then(res => res.json())
+      .then((data)=> {
+        setCardState(data)
+      })
+      .catch(err => console.log(err))
+    }, [])
 
+    console.log('THIS IS CARD STATE', cardState)
     
     return (
         <Container >
           
            <Grid container  spacing={5} direction='row' justifyContent = "center">
            {/* <Button variant='contained' color='primary' fullWidth={true}>Add Task Card</Button> */}
-                <Grid item>
+
+           {/* {cardState.map(card => {
+             return <cardState>
+           })} */}
+
+           
+                {/* <Grid item>
                   <Paper><TaskCard /></Paper>
                 </Grid>
                 <Grid item >
@@ -71,7 +63,7 @@ export default function Dashboard () {
                 </Grid>
                 <Grid item >
                   <Paper><TaskCard /></Paper>
-                </Grid>
+                </Grid> */}
                
           </Grid>
         </Container>

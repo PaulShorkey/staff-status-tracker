@@ -26,7 +26,7 @@ export default function SectionSummaryEntry({index, id}) {
         .catch(err => console.log(err))
       }, [])
 
-      console.log(rowState)
+      //console.log(rowState)
 
     
     return (

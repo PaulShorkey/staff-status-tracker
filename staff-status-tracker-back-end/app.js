@@ -28,7 +28,7 @@ app.get('/section', function(req, res) {
 });
 
 app.post('/section', function(req, res) {
-  console.log(req.body);
+  //console.log(req.body);
   knex('section-status')
     .insert({
       section: req.body.section,
@@ -65,6 +65,21 @@ app.put('/section/:id', function(req, res) {
 
 
 app.get('/section/:id', function(req, res) {
+    
+  knex 
+      .select('*')
+      .from('section-status')
+      .where('id', req.params.id)
+      .then(data => res.status(200).json(data))
+      .catch(err =>
+          res.status(500).json({
+            message:
+              'The data you are looking for could not be found. Please try again'
+          })
+      );
+})
+
+app.get('/section/:id/tasks', function(req, res) {
     
   knex 
       .select('*')
